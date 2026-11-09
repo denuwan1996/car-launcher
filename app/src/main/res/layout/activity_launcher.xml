@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg">
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="14dp">
+
+  <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical">
+      <TextView android:id="@+id/home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏠" android:textSize="24sp" android:layout_marginEnd="12dp"/>
+      <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+        <TextView android:id="@+id/greet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textColor="@color/text"/>
+        <TextView android:id="@+id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12sp" android:textColor="@color/text_dim"/>
+      </LinearLayout>
+    </LinearLayout>
+    <TextView android:id="@+id/clock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:textSize="34sp" android:textColor="@color/text"/>
+    <TextView android:id="@+id/night" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:gravity="center" android:paddingHorizontal="22dp" android:text="🌙 NIGHT" android:textSize="13sp" android:textColor="@color/text" android:background="@drawable/glass_card"/>
+  </RelativeLayout>
+
+  <TextView android:id="@+id/alert" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@color/accent" android:padding="8dp" android:textColor="#FFFFFF" android:textSize="14sp" android:visibility="gone"/>
+
+  <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp" android:orientation="horizontal">
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.85" android:orientation="vertical" android:padding="14dp" android:background="@drawable/glass_card" android:layout_marginEnd="12dp">
+      <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SPEED" android:textSize="11sp" android:textColor="@color/text_dim"/>
+      <com.example.carlauncher.GaugeView android:id="@+id/gauge" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+      <LinearLayout android:id="@+id/telem" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3" android:paddingBottom="8dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RPM" android:textSize="10sp" android:textColor="@color/text_dim"/><TextView android:id="@+id/rpm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/accent"/></LinearLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="COOLANT" android:textSize="10sp" android:textColor="@color/text_dim"/><TextView android:id="@+id/temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/accent"/></LinearLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BATTERY" android:textSize="10sp" android:textColor="@color/text_dim"/><TextView android:id="@+id/volt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/accent"/></LinearLayout></LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TRIP" android:textSize="10sp" android:textColor="@color/text_dim"/><TextView android:id="@+id/trip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 km" android:textColor="@color/text"/></LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DRIVE" android:textSize="10sp" android:textColor="@color/text_dim"/><TextView android:id="@+id/drive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 min" android:textColor="@color/text"/></LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HEADING" android:textSize="10sp" android:textColor="@color/text_dim"/><TextView android:id="@+id/heading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text"/></LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2.2" android:orientation="vertical">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="112dp" android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.6" android:padding="12dp" android:gravity="center_vertical" android:background="@drawable/glass_card" android:layout_marginEnd="12dp">
+          <ImageView android:id="@+id/art" android:layout_width="88dp" android:layout_height="88dp" android:scaleType="centerCrop" android:background="#33FF7A1A"/>
+          <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MUSIC" android:textSize="10sp" android:textColor="@color/accent"/>
+            <TextView android:id="@+id/song" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Not playing" android:textSize="18sp" android:textStyle="bold" android:singleLine="true" android:textColor="@color/text"/>
+            <TextView android:id="@+id/artist" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:textColor="@color/text_dim"/>
+            <ProgressBar android:id="@+id/prog" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" android:layout_marginTop="8dp" android:progressTint="@color/accent" android:max="1000"/>
+          </LinearLayout>
+          <TextView android:id="@+id/prev" android:layout_width="44dp" android:layout_height="44dp" android:gravity="center" android:text="⏮" android:textSize="20sp" android:textColor="@color/text"/>
+          <TextView android:id="@+id/play" android:layout_width="56dp" android:layout_height="56dp" android:gravity="center" android:text="▶" android:textSize="22sp" android:textColor="@color/accent"/>
+          <TextView android:id="@+id/next" android:layout_width="44dp" android:layout_height="44dp" android:gravity="center" android:text="⏭" android:textSize="20sp" android:textColor="@color/text"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/turn" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="12dp" android:gravity="center_vertical" android:background="@drawable/glass_card">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↰" android:textSize="40sp" android:textColor="@color/text" android:layout_marginEnd="10dp"/>
+          <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NEXT TURN" android:textSize="10sp" android:textColor="@color/accent"/>
+            <TextView android:id="@+id/turnText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tap to navigate" android:textSize="16sp" android:textColor="@color/text"/>
+          </LinearLayout>
+        </LinearLayout>
+      </LinearLayout>
+      <com.example.carlauncher.CarView android:id="@+id/car" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout android:id="@+id/nav" android:layout_width="match_parent" android:layout_height="72dp" android:layout_marginTop="8dp" android:background="@drawable/glass_card"/>
+</LinearLayout>
+<androidx.recyclerview.widget.RecyclerView android:id="@+id/appGrid" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg" android:padding="24dp" android:visibility="gone"/>
+</FrameLayout>
